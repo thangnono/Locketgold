@@ -1,0 +1,13 @@
+#!name=Locket Gold (Thắng NoNo)
+#!desc=By: Thắng NoNo
+
+
+[Script]
+~ By ThangNoNo
+～ Egern transfer to Shadowrocket & Surge & LanceX
+revenuecat = type=http-response, pattern=^https://api.revenuecat.com/.+/(receipts$|subscribers/[^/]+$), script-path=https://raw.githubusercontent.com/thangnono/ThangNoNo/refs/heads/main/ThangNoNo.sgmodule, requires-body=true, max-size=-1, timeout=60
+
+deleteHeader = type=http-request, pattern=^https://api.revenuecat.com/.+/(receipts|subscribers), script-path=https://raw.githubusercontent.com/thangnono/ThangNoNo/refs/heads/main/ThangNoNo1903.sgmodule, timeout=60
+
+[MITM] 
+hostname = %APPEND% api.revenuecat.com
